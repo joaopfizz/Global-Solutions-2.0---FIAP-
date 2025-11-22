@@ -20,10 +20,9 @@ SkillBridge é uma plataforma digital desenvolvida como MVP (Produto Mínimo Vi�
 
 ### 2. Mapa de Carreira (`mapa-carreira.html`)
 - Visualização interativa de trilhas de carreira:
-  - Desenvolvedor Full Stack
-  - UX/UI Designer
-  - Analista de Dados
-  - Product Manager Digital
+- Desenvolvedor Full Stack
+- UX/UI Designer
+- Analista de Dados - Product Manager Digital
 - Filtro por área de interesse
 - Informações sobre salários, tempo de preparação e taxa de empregabilidade
 - Calculadora de ROI (Retorno sobre Investimento)
@@ -135,13 +134,9 @@ Para hospedar o projeto, você pode usar:
 - Vercel
 - Qualquer serviço de hosting estático
 
-Basta fazer upload de todos os arquivos e acessar via URL pública.
-
 ## 👥 Desenvolvimento
 
-Projeto desenvolvido como MVP acadêmico para o curso FIAP, demonstrando conhecimentos em HTML, CSS e JavaScript puro.
+Projeto desenvolvido como MVP acadêmico para o curso de engenharia de software na FIAP, demonstrando conhecimentos em HTML, CSS e JavaScript puro.
 
 ---
-
-**© 2024 SkillBridge - Projeto acadêmico FIAP**
 

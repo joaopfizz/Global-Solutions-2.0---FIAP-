@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Progresso - SkillBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>SkillBridge</h1>
+                    <p class="tagline">Conectando talentos ao futuro</p>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="mapa-carreira.html">Mapa de Carreira</a></li>
+                    <li><a href="avaliacao-habilidades.html">Avaliação</a></li>
+                    <li><a href="dashboard.html" class="active">Meu Progresso</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Meu Progresso</h1>
+                <p>Acompanhe seu desenvolvimento profissional e suas conquistas</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="container">
+                <!-- User Info -->
+                <div class="dashboard-header">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <span id="userInitials">U</span>
+                        </div>
+                        <div class="user-details">
+                            <h2 id="userName">Usuário</h2>
+                            <p id="userGoal">Nenhum objetivo definido ainda</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="resetProgress()">Limpar Progresso</button>
+                </div>
+
+                <!-- Stats Overview -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-content">
+                            <h3 id="completedSkills">0</h3>
+                            <p>Habilidades Concluídas</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-content">
+                            <h3 id="totalHours">0h</h3>
+                            <p>Horas de Estudo</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <h3 id="progressPercentage">0%</h3>
+                            <p>Progresso Geral</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-content">
+                            <h3 id="badgesCount">0</h3>
+                            <p>Badges Conquistados</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Bars -->
+                <div class="progress-section">
+                    <h2>Progresso por Área</h2>
+                    <div class="progress-list">
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-label">Desenvolvimento Full Stack</span>
+                                <span class="progress-percentage">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-area="fullstack" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-label">UX/UI Design</span>
+                                <span class="progress-percentage">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-area="ux" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-label">Análise de Dados</span>
+                                <span class="progress-percentage">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-area="data" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span class="progress-label">Product Management</span>
+                                <span class="progress-percentage">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-area="pm" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Completed Steps -->
+                <div class="completed-steps-section">
+                    <h2>Habilidades Concluídas</h2>
+                    <div id="completedStepsList" class="completed-steps-list">
+                        <p class="empty-state">Nenhuma habilidade concluída ainda. Explore o <a href="mapa-carreira.html">Mapa de Carreira</a> para começar!</p>
+                    </div>
+                </div>
+
+                <!-- Badges -->
+                <div class="badges-section">
+                    <h2>Badges e Conquistas</h2>
+                    <div id="badgesList" class="badges-grid">
+                        <div class="badge-card locked">
+                            <div class="badge-icon">🌟</div>
+                            <h3>Iniciante</h3>
+                            <p>Complete sua primeira habilidade</p>
+                            <span class="badge-status">Bloqueado</span>
+                        </div>
+                        <div class="badge-card locked">
+                            <div class="badge-icon">🔥</div>
+                            <h3>Em Progresso</h3>
+                            <p>Complete 5 habilidades</p>
+                            <span class="badge-status">Bloqueado</span>
+                        </div>
+                        <div class="badge-card locked">
+                            <div class="badge-icon">⚡</div>
+                            <h3>Expert</h3>
+                            <p>Complete uma trilha completa</p>
+                            <span class="badge-status">Bloqueado</span>
+                        </div>
+                        <div class="badge-card locked">
+                            <div class="badge-icon">🎓</div>
+                            <h3>Mestre</h3>
+                            <p>Complete todas as trilhas</p>
+                            <span class="badge-status">Bloqueado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="recommendations-section">
+                    <h2>Recomendações para Você</h2>
+                    <div id="recommendationsList" class="recommendations-list">
+                        <div class="recommendation-card">
+                            <h3>📖 Comece sua jornada</h3>
+                            <p>Complete a <a href="avaliacao-habilidades.html">avaliação de habilidades</a> para receber recomendações personalizadas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SkillBridge</h3>
+                    <p>Conectando talentos ao futuro do trabalho</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="mapa-carreira.html">Mapa de Carreira</a></li>
+                        <li><a href="avaliacao-habilidades.html">Avaliação</a></li>
+                        <li><a href="dashboard.html">Meu Progresso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Impacto Social</h4>
+                    <p>Comprometidos com ODS 4, 8 e 10</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SkillBridge. Projeto acadêmico - FIAP.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
+

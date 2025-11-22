@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Carreira - SkillBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>SkillBridge</h1>
+                    <p class="tagline">Conectando talentos ao futuro</p>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="mapa-carreira.html" class="active">Mapa de Carreira</a></li>
+                    <li><a href="avaliacao-habilidades.html">Avaliação</a></li>
+                    <li><a href="dashboard.html">Meu Progresso</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Mapa de Carreira</h1>
+                <p>Explore trilhas de carreira interativas e descubra quais habilidades você precisa desenvolver</p>
+            </div>
+        </section>
+
+        <section class="career-map-section">
+            <div class="container">
+                <div class="filter-bar">
+                    <label for="careerFilter">Filtrar por área:</label>
+                    <select id="careerFilter" class="filter-select">
+                        <option value="all">Todas as áreas</option>
+                        <option value="tech">Tecnologia</option>
+                        <option value="design">Design</option>
+                        <option value="business">Negócios</option>
+                        <option value="data">Dados e Análise</option>
+                    </select>
+                </div>
+
+                <div class="career-paths" id="careerPaths">
+                    <!-- Tech Path -->
+                    <div class="career-path" data-category="tech">
+                        <div class="path-header">
+                            <div class="path-icon">💻</div>
+                            <h2>Desenvolvedor Full Stack</h2>
+                            <span class="path-badge">Alta Demanda</span>
+                        </div>
+                        <div class="path-content">
+                            <p class="path-description">Desenvolva aplicações web completas, dominando front-end e back-end. Uma das carreiras mais promissoras do mercado tech.</p>
+                            
+                            <div class="skills-roadmap">
+                                <h3>Trilha de Habilidades</h3>
+                                <div class="roadmap">
+                                    <div class="roadmap-step" data-step="1">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Fundamentos (3-4 meses)</h4>
+                                            <ul>
+                                                <li>HTML5 e CSS3</li>
+                                                <li>JavaScript Básico</li>
+                                                <li>Git e GitHub</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('fundamentos-fullstack')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-connector"></div>
+                                    <div class="roadmap-step" data-step="2">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>Front-end (4-6 meses)</h4>
+                                            <ul>
+                                                <li>React.js ou Vue.js</li>
+                                                <li>TypeScript</li>
+                                                <li>Responsive Design</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('frontend-fullstack')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-connector"></div>
+                                    <div class="roadmap-step" data-step="3">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>Back-end (4-6 meses)</h4>
+                                            <ul>
+                                                <li>Node.js ou Python</li>
+                                                <li>Bancos de Dados (SQL/NoSQL)</li>
+                                                <li>APIs REST</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('backend-fullstack')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="path-stats">
+                                <div class="stat">
+                                    <span class="stat-value">R$ 5.000 - 12.000</span>
+                                    <span class="stat-label">Salário Inicial</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">12-18 meses</span>
+                                    <span class="stat-label">Tempo de Preparação</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">92%</span>
+                                    <span class="stat-label">Taxa de Empregabilidade</span>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary" onclick="calculateROI('fullstack')">Calcular ROI da Requalificação</button>
+                        </div>
+                    </div>
+
+                    <!-- Design Path -->
+                    <div class="career-path" data-category="design">
+                        <div class="path-header">
+                            <div class="path-icon">🎨</div>
+                            <h2>UX/UI Designer</h2>
+                            <span class="path-badge">Crescente</span>
+                        </div>
+                        <div class="path-content">
+                            <p class="path-description">Crie experiências digitais incríveis combinando design visual e pesquisa de usuário para desenvolver produtos intuitivos.</p>
+                            
+                            <div class="skills-roadmap">
+                                <h3>Trilha de Habilidades</h3>
+                                <div class="roadmap">
+                                    <div class="roadmap-step" data-step="1">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Design Fundamentals (2-3 meses)</h4>
+                                            <ul>
+                                                <li>Princípios de Design</li>
+                                                <li>Figma ou Adobe XD</li>
+                                                <li>Wireframing</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('fundamentos-ux')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-connector"></div>
+                                    <div class="roadmap-step" data-step="2">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>UX Research (3-4 meses)</h4>
+                                            <ul>
+                                                <li>Pesquisa de Usuários</li>
+                                                <li>Personas e Jornadas</li>
+                                                <li>Testes de Usabilidade</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('research-ux')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-connector"></div>
+                                    <div class="roadmap-step" data-step="3">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>UI Design (3-4 meses)</h4>
+                                            <ul>
+                                                <li>Design Systems</li>
+                                                <li>Prototipagem</li>
+                                                <li>Handoff para Desenvolvimento</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('ui-ux')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="path-stats">
+                                <div class="stat">
+                                    <span class="stat-value">R$ 4.000 - 9.000</span>
+                                    <span class="stat-label">Salário Inicial</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">8-12 meses</span>
+                                    <span class="stat-label">Tempo de Preparação</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">85%</span>
+                                    <span class="stat-label">Taxa de Empregabilidade</span>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary" onclick="calculateROI('ux')">Calcular ROI da Requalificação</button>
+                        </div>
+                    </div>
+
+                    <!-- Data Path -->
+                    <div class="career-path" data-category="data">
+                        <div class="path-header">
+                            <div class="path-icon">📊</div>
+                            <h2>Analista de Dados</h2>
+                            <span class="path-badge">Alta Demanda</span>
+                        </div>
+                        <div class="path-content">
+                            <p class="path-description">Transforme dados em insights estratégicos. Domine análise de dados, visualização e storytelling para apoiar decisões empresariais.</p>
+                            
+                            <div class="skills-roadmap">
+                                <h3>Trilha de Habilidades</h3>
+                                <div class="roadmap">
+                                    <div class="roadmap-step" data-step="1">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Fundamentos (2-3 meses)</h4>
+                                            <ul>
+                                                <li>Excel Avançado</li>
+                                                <li>SQL Básico</li>
+                                                <li>Estatística Descritiva</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('fundamentos-data')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-connector"></div>
+                                    <div class="roadmap-step" data-step="2">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>Análise e Visualização (3-4 meses)</h4>
+                                            <ul>
+                                                <li>Power BI ou Tableau</li>
+                                                <li>Python para Análise</li>
+                                                <li>Visualização de Dados</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('viz-data')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-connector"></div>
+                                    <div class="roadmap-step" data-step="3">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>Business Intelligence (4-6 meses)</h4>
+                                            <ul>
+                                                <li>Data Warehousing</li>
+                                                <li>ETL Processes</li>
+                                                <li>Storytelling com Dados</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('bi-data')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="path-stats">
+                                <div class="stat">
+                                    <span class="stat-value">R$ 4.500 - 10.000</span>
+                                    <span class="stat-label">Salário Inicial</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">9-13 meses</span>
+                                    <span class="stat-label">Tempo de Preparação</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">88%</span>
+                                    <span class="stat-label">Taxa de Empregabilidade</span>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary" onclick="calculateROI('data')">Calcular ROI da Requalificação</button>
+                        </div>
+                    </div>
+
+                    <!-- Business Path -->
+                    <div class="career-path" data-category="business">
+                        <div class="path-header">
+                            <div class="path-icon">💼</div>
+                            <h2>Product Manager Digital</h2>
+                            <span class="path-badge">Emergente</span>
+                        </div>
+                        <div class="path-content">
+                            <p class="path-description">Gerencie produtos digitais combinando visão estratégica, técnicas de produto e conhecimento técnico para criar soluções que os usuários amam.</p>
+                            
+                            <div class="skills-roadmap">
+                                <h3>Trilha de Habilidades</h3>
+                                <div class="roadmap">
+                                    <div class="roadmap-step" data-step="1">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Fundamentos (2-3 meses)</h4>
+                                            <ul>
+                                                <li>Product Thinking</li>
+                                                <li>Metodologias Ágeis</li>
+                                                <li>Análise de Mercado</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('fundamentos-pm')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-connector"></div>
+                                    <div class="roadmap-step" data-step="2">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>Gestão de Produto (4-5 meses)</h4>
+                                            <ul>
+                                                <li>Roadmapping</li>
+                                                <li>Priorização</li>
+                                                <li>Métricas e Analytics</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('gestao-pm')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                    <div class="roadmap-connector"></div>
+                                    <div class="roadmap-step" data-step="3">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>Liderança e Estratégia (3-4 meses)</h4>
+                                            <ul>
+                                                <li>Stakeholder Management</li>
+                                                <li>Visão de Produto</li>
+                                                <li>Go-to-Market</li>
+                                            </ul>
+                                            <button class="btn-step" onclick="trackProgress('estrategia-pm')">Marcar como concluído</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="path-stats">
+                                <div class="stat">
+                                    <span class="stat-value">R$ 6.000 - 15.000</span>
+                                    <span class="stat-label">Salário Inicial</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">9-12 meses</span>
+                                    <span class="stat-label">Tempo de Preparação</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">90%</span>
+                                    <span class="stat-label">Taxa de Empregabilidade</span>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary" onclick="calculateROI('pm')">Calcular ROI da Requalificação</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROI Calculator Modal -->
+        <div id="roiModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeROIModal()">&times;</span>
+                <h2>Calculadora de ROI da Requalificação</h2>
+                <div id="roiResults"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SkillBridge</h3>
+                    <p>Conectando talentos ao futuro do trabalho</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="mapa-carreira.html">Mapa de Carreira</a></li>
+                        <li><a href="avaliacao-habilidades.html">Avaliação</a></li>
+                        <li><a href="dashboard.html">Meu Progresso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Impacto Social</h4>
+                    <p>Comprometidos com ODS 4, 8 e 10</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SkillBridge. Projeto acadêmico - FIAP.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/career-map.js"></script>
+</body>
+</html>
+

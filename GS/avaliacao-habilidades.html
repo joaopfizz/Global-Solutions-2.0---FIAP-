@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Habilidades - SkillBridge</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>SkillBridge</h1>
+                    <p class="tagline">Conectando talentos ao futuro</p>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="mapa-carreira.html">Mapa de Carreira</a></li>
+                    <li><a href="avaliacao-habilidades.html" class="active">Avaliação</a></li>
+                    <li><a href="dashboard.html">Meu Progresso</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Avaliação de Habilidades</h1>
+                <p>Descubra suas lacunas e identifique quais competências você precisa desenvolver</p>
+            </div>
+        </section>
+
+        <section class="assessment-section">
+            <div class="container">
+                <div class="assessment-intro">
+                    <h2>Como funciona a avaliação?</h2>
+                    <p>Responda às perguntas abaixo sobre suas habilidades atuais e objetivos de carreira. Com base nas suas respostas, geraremos um relatório personalizado identificando:</p>
+                    <ul>
+                        <li>✓ Habilidades que você já possui</li>
+                        <li>✓ Lacunas que precisam ser preenchidas</li>
+                        <li>✓ Recomendações de trilhas de carreira</li>
+                        <li>✓ Estimativa de tempo para requalificação</li>
+                    </ul>
+                </div>
+
+                <form id="assessmentForm" class="assessment-form">
+                    <!-- Personal Info -->
+                    <div class="form-section">
+                        <h3>Informações Pessoais</h3>
+                        <div class="form-group">
+                            <label for="nome">Nome completo *</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="atualProfissao">Profissão Atual</label>
+                            <input type="text" id="atualProfissao" name="atualProfissao" placeholder="Ex: Vendedor, Analista, etc.">
+                        </div>
+                    </div>
+
+                    <!-- Career Goals -->
+                    <div class="form-section">
+                        <h3>Objetivos de Carreira</h3>
+                        <div class="form-group">
+                            <label for="objetivoCarreira">Qual é seu principal objetivo? *</label>
+                            <select id="objetivoCarreira" name="objetivoCarreira" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="transicao">Fazer transição completa de carreira</option>
+                                <option value="promocao">Ser promovido na área atual</option>
+                                <option value="mudanca-setor">Mudar de setor dentro da mesma área</option>
+                                <option value="atualizacao">Atualizar habilidades na área atual</option>
+                                <option value="empreender">Empreender na área de tecnologia</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="areaInteresse">Área de interesse *</label>
+                            <select id="areaInteresse" name="areaInteresse" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="tech">Tecnologia / Desenvolvimento</option>
+                                <option value="design">Design / UX/UI</option>
+                                <option value="data">Dados e Análise</option>
+                                <option value="business">Negócios / Product Management</option>
+                                <option value="marketing">Marketing Digital</option>
+                                <option value="outro">Outra área</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Skills Assessment -->
+                    <div class="form-section">
+                        <h3>Avaliação de Habilidades Técnicas</h3>
+                        <p class="section-description">Avalie seu nível de conhecimento em cada habilidade (1 = Iniciante, 5 = Avançado)</p>
+
+                        <div class="skill-question">
+                            <label>Programação e Desenvolvimento</label>
+                            <div class="skill-options">
+                                <label class="skill-option">
+                                    <input type="radio" name="programacao" value="1">
+                                    <span>1 - Iniciante</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="programacao" value="2">
+                                    <span>2</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="programacao" value="3">
+                                    <span>3 - Intermediário</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="programacao" value="4">
+                                    <span>4</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="programacao" value="5">
+                                    <span>5 - Avançado</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="skill-question">
+                            <label>Design e UX/UI</label>
+                            <div class="skill-options">
+                                <label class="skill-option">
+                                    <input type="radio" name="design" value="1">
+                                    <span>1 - Iniciante</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="design" value="2">
+                                    <span>2</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="design" value="3">
+                                    <span>3 - Intermediário</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="design" value="4">
+                                    <span>4</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="design" value="5">
+                                    <span>5 - Avançado</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="skill-question">
+                            <label>Análise de Dados</label>
+                            <div class="skill-options">
+                                <label class="skill-option">
+                                    <input type="radio" name="dados" value="1">
+                                    <span>1 - Iniciante</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="dados" value="2">
+                                    <span>2</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="dados" value="3">
+                                    <span>3 - Intermediário</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="dados" value="4">
+                                    <span>4</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="dados" value="5">
+                                    <span>5 - Avançado</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="skill-question">
+                            <label>Gestão de Produto</label>
+                            <div class="skill-options">
+                                <label class="skill-option">
+                                    <input type="radio" name="produto" value="1">
+                                    <span>1 - Iniciante</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="produto" value="2">
+                                    <span>2</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="produto" value="3">
+                                    <span>3 - Intermediário</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="produto" value="4">
+                                    <span>4</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="produto" value="5">
+                                    <span>5 - Avançado</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="skill-question">
+                            <label>Marketing Digital</label>
+                            <div class="skill-options">
+                                <label class="skill-option">
+                                    <input type="radio" name="marketing" value="1">
+                                    <span>1 - Iniciante</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="marketing" value="2">
+                                    <span>2</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="marketing" value="3">
+                                    <span>3 - Intermediário</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="marketing" value="4">
+                                    <span>4</span>
+                                </label>
+                                <label class="skill-option">
+                                    <input type="radio" name="marketing" value="5">
+                                    <span>5 - Avançado</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="form-section">
+                        <h3>Habilidades Comportamentais</h3>
+                        <div class="form-group">
+                            <label for="experienciaLideranca">Tem experiência com liderança de equipes?</label>
+                            <select id="experienciaLideranca" name="experienciaLideranca">
+                                <option value="sim">Sim</option>
+                                <option value="nao" selected>Não</option>
+                                <option value="parcial">Parcialmente</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="trabalhoRemoto">Já trabalhou remotamente?</label>
+                            <select id="trabalhoRemoto" name="trabalhoRemoto">
+                                <option value="sim">Sim</option>
+                                <option value="nao" selected>Não</option>
+                                <option value="hibrido">Modelo híbrido</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="idiomas">Nível de inglês</label>
+                            <select id="idiomas" name="idiomas">
+                                <option value="basico">Básico</option>
+                                <option value="intermediario">Intermediário</option>
+                                <option value="avancado">Avançado</option>
+                                <option value="fluente">Fluente</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="form-section">
+                        <h3>Disponibilidade para Aprendizado</h3>
+                        <div class="form-group">
+                            <label for="horasSemana">Quantas horas por semana você pode dedicar ao aprendizado? *</label>
+                            <select id="horasSemana" name="horasSemana" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="5">Menos de 5 horas</option>
+                                <option value="10">5-10 horas</option>
+                                <option value="15">10-15 horas</option>
+                                <option value="20">15-20 horas</option>
+                                <option value="30">Mais de 20 horas</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="prazo">Qual o prazo para requalificação?</label>
+                            <select id="prazo" name="prazo">
+                                <option value="6">6 meses</option>
+                                <option value="12">12 meses</option>
+                                <option value="18">18 meses</option>
+                                <option value="24">24 meses ou mais</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">Gerar Relatório de Habilidades</button>
+                    </div>
+                </form>
+
+                <!-- Results Section (hidden initially) -->
+                <div id="resultsSection" class="results-section" style="display: none;">
+                    <h2>Seu Relatório de Habilidades</h2>
+                    <div id="resultsContent"></div>
+                    <div class="results-actions">
+                        <a href="mapa-carreira.html" class="btn btn-primary">Explorar Trilhas de Carreira</a>
+                        <a href="dashboard.html" class="btn btn-secondary">Ver Meu Progresso</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SkillBridge</h3>
+                    <p>Conectando talentos ao futuro do trabalho</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="mapa-carreira.html">Mapa de Carreira</a></li>
+                        <li><a href="avaliacao-habilidades.html">Avaliação</a></li>
+                        <li><a href="dashboard.html">Meu Progresso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Impacto Social</h4>
+                    <p>Comprometidos com ODS 4, 8 e 10</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SkillBridge. Projeto acadêmico - FIAP.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/assessment.js"></script>
+</body>
+</html>
+
